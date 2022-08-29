@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.text__red{
+    color: rgb(174, 12, 36);
+    padding-right: 16px;
+}
+
+.row{
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    min-width: min-content;
+    padding: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    box-shadow: 0px 0px 20px 25px;
+}
+
+.container{
+    background-color: rgb(255, 197, 197);
+}
+
+/* NAV */
+
+
+.name__nav{
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.container__nav{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav__links{
+    display: flex;
+}
+
+.nav__link{
+    color: white;
+    font-size: 18px;
+    margin-left: 12px;
+    background-color: rgb(57, 57, 57);
+    padding: 6px 10px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.nav__link:hover{
+    background-color: rgb(30, 30, 30);
+    padding: 8px 12px;
+    transition: all 200ms ease;
+}
+
+.nav__link--anchor-primary{
+    background-color: rgb(174, 12, 36)
+}
+
+.nav__link--anchor-primary:hover{
+    background-color: rgb(172, 61, 77);
+}
+
+.nav__logo-name--container{
+    display: flex;
+}
+
+.nav__logo{
+    height: 50px;
+    animation: animate-logo 600ms infinite ease;
+}
+
+@keyframes animate-logo{
+    0%{
+        transform: rotate(0);
+    }
+  
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* ABOUT ME*/
+
+.about-me__container{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me__logo{
+    height: 400px;
+    border-radius: 70%;
+    margin-left: 8px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.row__about-me{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
+}
+
+.welcome{
+    color: black;
+    position: absolute;
+    top: 0;
+    animation: animate-welcome 800ms 200ms ease;
+}
+
+@keyframes animate-welcome{
+    0%{transform: scale(0);
+    }
+    80%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.about-me__logo--container{
+    padding: 60px 0;
+    animation: animate-profile-picture 800ms 200ms ease;
+}
+
+@keyframes animate-profile-picture{
+    0%{transform: scale(0);
+    }
+    80%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.about-me__description{
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+
+.about-me__links{
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 16px 0;
+}
+
+.fa-brands{
+    margin: 10px 12px;
+    text-align: center;
+}
+
+.about-me__anchor{
+    box-sizing: content-box;
+    color: rgb(174, 12, 36);
+}
+
+.about-me__anchor:hover{
+    font-size: smaller;
+}
+
+.placeholder__logo{
+    width: 80%;
+}
+
+/* Technology Stack */
+
+.languages--container{
+    display: flex;
+    justify-content: center;
+}
+
+.row__languages{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.technology-stack{
+    margin: 36px;
+    color: black;
+    font-size: 30px;
+}
+
+.language__wrapper{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.language__image{
+    width: 100%;
+    margin-bottom: 12px;
+    transition: all 50ms ease;
+}
+
+.language__wrapper:hover .language__image{
+    transform: scale(0.8);
+    opacity: .9;
+}
+
+.technology-stack--container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.language__name{
+    color: black;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 250ms ease;
+}
+
+.language__wrapper:hover .language__name{
+    opacity: 1;
+    transform: scale(1);
+}
