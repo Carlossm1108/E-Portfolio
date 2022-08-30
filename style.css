@@ -23,25 +23,26 @@ a{
 
 .text__red{
     color: rgb(174, 12, 36);
-    padding-right: 16px;
 }
 
 .row{
     background-color: white;
     width: 100%;
     max-width: 600px;
-    min-width: min-content;
+    
     padding: 0 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
-    box-shadow: 0px 0px 20px 25px;
+    box-shadow: 0px 0px 20px 25px white;
 }
 
 .container{
     background-color: rgb(255, 197, 197);
+    display: flex;
+    justify-content: center;
 }
 
 /* NAV */
@@ -50,10 +51,19 @@ a{
 .name__nav{
     font-size: 36px;
     font-weight: 700;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.name{
+    flex-direction: row-reverse;
+    width: fit-content;
 }
 
 .container__nav{
     height: 80px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,10 +72,13 @@ a{
 
 .nav__links{
     display: flex;
+    justify-content: end;
+    width: 50%;
 }
 
 .nav__link{
     color: white;
+    width: 100%;
     font-size: 18px;
     margin-left: 12px;
     background-color: rgb(57, 57, 57);
@@ -90,10 +103,16 @@ a{
 
 .nav__logo-name--container{
     display: flex;
+    width: 40%;
+}
+
+.nav__logo--container{
+    width: 1%;
 }
 
 .nav__logo{
     height: 50px;
+    width: 80px;
     animation: animate-logo 600ms infinite ease;
 }
 
@@ -183,6 +202,7 @@ a{
 .about-me__anchor{
     box-sizing: content-box;
     color: rgb(174, 12, 36);
+    transition: all 50ms ease;
 }
 
 .about-me__anchor:hover{
@@ -222,7 +242,7 @@ a{
 .language__image{
     width: 100%;
     margin-bottom: 12px;
-    transition: all 50ms ease;
+    transition: all 250ms ease;
 }
 
 .language__wrapper:hover .language__image{
@@ -234,6 +254,7 @@ a{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 12px;
 }
 
 .language__name{
@@ -246,4 +267,87 @@ a{
 .language__wrapper:hover .language__name{
     opacity: 1;
     transform: scale(1);
+}
+
+.technology__description{
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.technology-stack--description{
+    width: 80%;
+}
+
+/* Projects */
+
+.row__projects{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects{
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition:  opacity 450ms ease;
+    z-index: 2;
+}
+
+.projects:hover .projects::before{
+    opacity: .7;
+}
+
+.projects__head{
+    font-size: 32px;
+}
+
+.projects__description{
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+
+.projects:hover .projects__description{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.projects:hover .projects__description{
+    opacity: 1;
+}
+
+.projects__header{
+    color: black;
+}
+
+.project__image{
+    width: 400px; 
+}
+
+.projects:hover .project__image{
+    transform: scale(1.07);
+    filter: blur(5px);
 }
