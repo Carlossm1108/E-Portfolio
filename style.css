@@ -72,19 +72,19 @@ a{
 
 .nav__links{
     display: flex;
-    justify-content: end;
-    width: 50%;
+    justify-content: space-around;
+    width: 300px;
 }
 
 .nav__link{
     color: white;
     width: 100%;
     font-size: 18px;
-    margin-left: 12px;
     background-color: rgb(57, 57, 57);
     padding: 6px 10px;
     border-radius: 25px;
     text-align: center;
+    
 }
 
 .nav__link:hover{
@@ -292,11 +292,15 @@ a{
 
 .projects{
     display: flex;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
     border-radius: 20px;
     overflow: hidden;
     position: relative;
     justify-content: center;
+}
+
+.project__list{
+    margin: 40px 0;
 }
 
 .projects::before{
@@ -307,55 +311,107 @@ a{
     width: 100%;
     height: 100%;
     background-color: #1c1d25;
-    opacity: 0;
+    opacity:0;
     transition: opacity 450ms ease;
-    z-index: 1;
+z-index: 2;
 }
 
-.projects:hover .projects::before{
-    opacity: 0.7;
+.project__list:hover .projects::before{
+    opacity: .7;
 }
+
 
 .projects__head{
     font-size: 32px;
 }
 
 .projects__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
+    padding: 8px 16px;
     width: 100%;
     height: 100%;
     top: 50%;
     transform: translateY(100%);
     max-width: 350px;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms ease;
     z-index: 3;
-    opacity: 0;;
-    transition: transform 450ms, opacity 300ms;
 }
 
-.projects:hover .projects__description{
+.project__list:hover .projects__description{
     opacity: 1;
     transform: translateY(-50%);
 }
 
 .projects__description--title, 
 .projects__description--subtitle,
-.projects__description--para{
-    color: black;
+.projects__description--para,
+.projects__link{
+    color: white;
     text-align: center;
-    
+    margin-top: 4px;
 }
 
+.projects__description--link{
+    margin: 8px;
+}
 
+.projects__link{
+    transition: all 200ms ease;
+}
+
+.projects__link:hover{
+    color: rgb(174, 12, 36);
+}
 
 .projects__header{
     color: black;
 }
 
 .project__image{
-    width: 400px;
+    width: 400px;}
+
+.project__list:hover .project__image{
+    filter: blur(5px);
 }
 
-.projects:hover .project__image{
-    transform: scale(1.07);
-    filter: blur(5px);
+/* Footer */
+
+.container__footer{
+    margin-top: 20px;
+}
+
+.footer__anchor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative; text-decoration: underline;
+}
+
+.footer__logo{
+    width: 125px;
+    margin-top: 80px;
+    margin-right: 16px;
+}
+
+.footer__figure{
+    display: flex;
+    align-items: center;
+}
+
+.footer__span{
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    transition: all 250ms ease;
+    
+}
+
+.footer__anchor:hover .footer__span{
+    opacity: 1;
+    transform: translateX(20px);
 }
